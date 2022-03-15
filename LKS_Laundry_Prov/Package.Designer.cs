@@ -70,6 +70,7 @@ namespace LKS_Laundry_Prov
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lbltime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel_customer.SuspendLayout();
@@ -561,11 +562,23 @@ namespace LKS_Laundry_Prov
             this.label11.TabIndex = 62;
             this.label11.Text = "Description :";
             // 
+            // lbltime
+            // 
+            this.lbltime.AutoSize = true;
+            this.lbltime.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltime.ForeColor = System.Drawing.Color.Black;
+            this.lbltime.Location = new System.Drawing.Point(304, 9);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(59, 23);
+            this.lbltime.TabIndex = 64;
+            this.lbltime.Text = "Name";
+            // 
             // Package
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.lbltime);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox3);
@@ -653,5 +666,6 @@ namespace LKS_Laundry_Prov
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbltime;
     }
 }

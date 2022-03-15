@@ -16,7 +16,7 @@ namespace LKS_Laundry_Prov
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash());
+            Application.Run(new MasterCustomer());
         }
     }
 }
