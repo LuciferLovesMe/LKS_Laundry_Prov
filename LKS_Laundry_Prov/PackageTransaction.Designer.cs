@@ -522,7 +522,7 @@ namespace LKS_Laundry_Prov
             // 
             // panel_package_transaction
             // 
-            this.panel_package_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.panel_package_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_package_transaction.Controls.Add(this.label5);
             this.panel_package_transaction.Controls.Add(this.button5);
             this.panel_package_transaction.Location = new System.Drawing.Point(2, 324);

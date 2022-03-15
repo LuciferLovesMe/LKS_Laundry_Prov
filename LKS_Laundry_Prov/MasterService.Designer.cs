@@ -333,7 +333,7 @@ namespace LKS_Laundry_Prov
             // 
             // panel_service
             // 
-            this.panel_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.panel_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_service.Controls.Add(this.label2);
             this.panel_service.Controls.Add(this.button2);
             this.panel_service.Cursor = System.Windows.Forms.Cursors.Hand;

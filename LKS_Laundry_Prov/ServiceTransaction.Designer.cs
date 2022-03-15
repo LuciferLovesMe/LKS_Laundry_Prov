@@ -64,15 +64,15 @@ namespace LKS_Laundry_Prov
             this.label9 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -269,7 +269,7 @@ namespace LKS_Laundry_Prov
             // 
             // panel_service_transaction
             // 
-            this.panel_service_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.panel_service_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_service_transaction.Controls.Add(this.label4);
             this.panel_service_transaction.Controls.Add(this.button4);
             this.panel_service_transaction.Location = new System.Drawing.Point(2, 259);
@@ -508,6 +508,20 @@ namespace LKS_Laundry_Prov
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Service :";
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(37, 130);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(170, 38);
+            this.button10.TabIndex = 52;
+            this.button10.Text = "Add";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button11);
@@ -525,41 +539,19 @@ namespace LKS_Laundry_Prov
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information :";
             // 
-            // label10
+            // button11
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 31);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 16);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Phone Number :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(19, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 23);
-            this.textBox2.TabIndex = 54;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(19, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 23);
-            this.textBox3.TabIndex = 56;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(16, 80);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 16);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Name :";
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(208, 131);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(142, 38);
+            this.button11.TabIndex = 53;
+            this.button11.Text = "Add New Customer";
+            this.button11.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -580,33 +572,41 @@ namespace LKS_Laundry_Prov
             this.label12.TabIndex = 57;
             this.label12.Text = "Address :";
             // 
-            // button10
+            // textBox3
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(37, 130);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(170, 38);
-            this.button10.TabIndex = 52;
-            this.button10.Text = "Add";
-            this.button10.UseVisualStyleBackColor = false;
+            this.textBox3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(19, 100);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(160, 23);
+            this.textBox3.TabIndex = 56;
             // 
-            // button11
+            // label11
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(208, 131);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(142, 38);
-            this.button11.TabIndex = 53;
-            this.button11.Text = "Add New Customer";
-            this.button11.UseVisualStyleBackColor = false;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(16, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 16);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Name :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(19, 51);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(160, 23);
+            this.textBox2.TabIndex = 54;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(16, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 16);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "Phone Number :";
             // 
             // lblid
             // 

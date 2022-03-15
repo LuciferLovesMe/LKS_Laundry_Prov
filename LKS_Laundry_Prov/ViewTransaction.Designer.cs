@@ -289,7 +289,7 @@ namespace LKS_Laundry_Prov
             // 
             // panel_report
             // 
-            this.panel_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.panel_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_report.Controls.Add(this.label6);
             this.panel_report.Controls.Add(this.button6);
             this.panel_report.Location = new System.Drawing.Point(2, 388);
