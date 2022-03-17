@@ -50,4 +50,9 @@ namespace LKS_Laundry_Prov
             }
         }
     }
+
+    class Se
+    {
+        public static int s { set; get; }
+    }
 }
