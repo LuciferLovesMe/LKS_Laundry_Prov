@@ -11,7 +11,7 @@ namespace LKS_Laundry_Prov
 {
     class Utils
     {
-        public static string conn = @"Data Source=desktop-00eposj;Initial Catalog=LKS_Laundry_Prov;Integrated Security=True";
+        public static string conn = @"Data Source=asmodeus;Initial Catalog=LKS_Laundry_Prov;Integrated Security=True";
     }
 
     class Command

@@ -31,8 +31,9 @@ namespace LKS_Laundry_Prov
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomer));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@ namespace LKS_Laundry_Prov
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,32 @@ namespace LKS_Laundry_Prov
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(398, 149);
             this.panel1.TabIndex = 0;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Crimson;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(354, -3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(45, 45);
+            this.button9.TabIndex = 65;
+            this.button9.Text = "x";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(139, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Add Customer";
             // 
             // button1
             // 
@@ -70,17 +96,6 @@ namespace LKS_Laundry_Prov
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(139, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Add Customer";
-            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +103,7 @@ namespace LKS_Laundry_Prov
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(345, 23);
             this.textBox3.TabIndex = 60;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label11
             // 
@@ -106,6 +122,7 @@ namespace LKS_Laundry_Prov
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(345, 23);
             this.textBox2.TabIndex = 58;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label10
             // 
@@ -132,9 +149,9 @@ namespace LKS_Laundry_Prov
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 272);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
+            this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 61;
-            this.label2.Text = "Name :";
+            this.label2.Text = "Address :";
             // 
             // button2
             // 
@@ -149,21 +166,7 @@ namespace LKS_Laundry_Prov
             this.button2.TabIndex = 63;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Crimson;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(354, -3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(45, 45);
-            this.button9.TabIndex = 65;
-            this.button9.Text = "x";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddCustomer
             // 

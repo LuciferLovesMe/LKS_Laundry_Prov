@@ -47,18 +47,8 @@ namespace LKS_Laundry_Prov
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblest = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblid = new System.Windows.Forms.Label();
             this.panel_employee = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.lbltime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,12 +70,28 @@ namespace LKS_Laundry_Prov
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel_package = new System.Windows.Forms.Panel();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.lblest = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel_employee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel_customer.SuspendLayout();
             this.panel_package_transaction.SuspendLayout();
@@ -93,6 +99,7 @@ namespace LKS_Laundry_Prov
             this.panel_report.SuspendLayout();
             this.panel_service.SuspendLayout();
             this.panel_package.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -125,6 +132,9 @@ namespace LKS_Laundry_Prov
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(-11, 3);
@@ -185,6 +195,7 @@ namespace LKS_Laundry_Prov
             this.button11.TabIndex = 53;
             this.button11.Text = "Add New Customer";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox1
             // 
@@ -214,9 +225,11 @@ namespace LKS_Laundry_Prov
             this.button10.TabIndex = 52;
             this.button10.Text = "Add";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(190, 49);
             this.textBox4.Multiline = true;
@@ -253,6 +266,7 @@ namespace LKS_Laundry_Prov
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(19, 100);
             this.textBox3.Name = "textBox3";
@@ -276,6 +290,7 @@ namespace LKS_Laundry_Prov
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 23);
             this.textBox2.TabIndex = 54;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label10
             // 
@@ -287,88 +302,16 @@ namespace LKS_Laundry_Prov
             this.label10.TabIndex = 52;
             this.label10.Text = "Phone Number :";
             // 
-            // lblest
-            // 
-            this.lblest.AutoSize = true;
-            this.lblest.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblest.Location = new System.Drawing.Point(463, 550);
-            this.lblest.Name = "lblest";
-            this.lblest.Size = new System.Drawing.Size(16, 18);
-            this.lblest.TabIndex = 75;
-            this.lblest.Text = "0";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(334, 550);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 18);
-            this.label15.TabIndex = 74;
-            this.label15.Text = "Total Estimation :";
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(498, 521);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(16, 18);
-            this.lbltotal.TabIndex = 73;
-            this.lbltotal.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(463, 521);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 18);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Rp.";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(334, 521);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 18);
-            this.label13.TabIndex = 71;
-            this.label13.Text = "Total Must Pay    :";
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(337, 264);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(36, 17);
-            this.lblid.TabIndex = 70;
-            this.lblid.Text = "[ id ]";
-            // 
             // panel_employee
             // 
             this.panel_employee.Controls.Add(this.label1);
             this.panel_employee.Controls.Add(this.button1);
+            this.panel_employee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_employee.Location = new System.Drawing.Point(2, 65);
             this.panel_employee.Name = "panel_employee";
             this.panel_employee.Size = new System.Drawing.Size(307, 65);
             this.panel_employee.TabIndex = 8;
             this.panel_employee.Click += new System.EventHandler(this.panel_employee_Click);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(798, 523);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(171, 41);
-            this.button12.TabIndex = 77;
-            this.button12.Text = "Submit";
-            this.button12.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -376,6 +319,9 @@ namespace LKS_Laundry_Prov
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(-11, 3);
@@ -385,32 +331,6 @@ namespace LKS_Laundry_Prov
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.panel_package_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(708, 260);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 18);
-            this.label8.TabIndex = 67;
-            this.label8.Text = "Search :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(777, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 23);
-            this.textBox1.TabIndex = 66;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(337, 292);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(633, 213);
-            this.dataGridView1.TabIndex = 65;
             // 
             // button9
             // 
@@ -470,6 +390,7 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_customer.Controls.Add(this.label7);
             this.panel_customer.Controls.Add(this.button7);
+            this.panel_customer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_customer.Location = new System.Drawing.Point(2, 452);
             this.panel_customer.Name = "panel_customer";
             this.panel_customer.Size = new System.Drawing.Size(307, 65);
@@ -494,6 +415,9 @@ namespace LKS_Laundry_Prov
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(-11, 3);
@@ -509,7 +433,11 @@ namespace LKS_Laundry_Prov
             this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(14, 534);
@@ -525,6 +453,7 @@ namespace LKS_Laundry_Prov
             this.panel_package_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_package_transaction.Controls.Add(this.label5);
             this.panel_package_transaction.Controls.Add(this.button5);
+            this.panel_package_transaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_package_transaction.Location = new System.Drawing.Point(2, 324);
             this.panel_package_transaction.Name = "panel_package_transaction";
             this.panel_package_transaction.Size = new System.Drawing.Size(307, 65);
@@ -547,6 +476,9 @@ namespace LKS_Laundry_Prov
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(-11, 3);
@@ -561,6 +493,7 @@ namespace LKS_Laundry_Prov
             this.panel_service_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
             this.panel_service_transaction.Controls.Add(this.label4);
             this.panel_service_transaction.Controls.Add(this.button4);
+            this.panel_service_transaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_service_transaction.Location = new System.Drawing.Point(2, 259);
             this.panel_service_transaction.Name = "panel_service_transaction";
             this.panel_service_transaction.Size = new System.Drawing.Size(307, 65);
@@ -585,6 +518,9 @@ namespace LKS_Laundry_Prov
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(-11, 3);
@@ -599,6 +535,7 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_report.Controls.Add(this.label6);
             this.panel_report.Controls.Add(this.button6);
+            this.panel_report.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_report.Location = new System.Drawing.Point(2, 388);
             this.panel_report.Name = "panel_report";
             this.panel_report.Size = new System.Drawing.Size(307, 65);
@@ -623,6 +560,9 @@ namespace LKS_Laundry_Prov
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-11, 3);
@@ -638,6 +578,7 @@ namespace LKS_Laundry_Prov
             this.panel_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
             this.panel_service.Controls.Add(this.label2);
             this.panel_service.Controls.Add(this.button2);
+            this.panel_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_service.Location = new System.Drawing.Point(2, 129);
             this.panel_service.Name = "panel_service";
             this.panel_service.Size = new System.Drawing.Size(307, 65);
@@ -662,6 +603,9 @@ namespace LKS_Laundry_Prov
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(-11, 3);
@@ -676,43 +620,207 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_package.Controls.Add(this.label3);
             this.panel_package.Controls.Add(this.button3);
+            this.panel_package.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_package.Location = new System.Drawing.Point(2, 194);
             this.panel_package.Name = "panel_package";
             this.panel_package.Size = new System.Drawing.Size(307, 65);
             this.panel_package.TabIndex = 10;
             this.panel_package.Click += new System.EventHandler(this.panel_package_Click);
             // 
+            // btn_remove
+            // 
+            this.btn_remove.BackColor = System.Drawing.Color.Crimson;
+            this.btn_remove.FlatAppearance.BorderSize = 0;
+            this.btn_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_remove.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove.ForeColor = System.Drawing.Color.White;
+            this.btn_remove.Location = new System.Drawing.Point(337, 507);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(176, 33);
+            this.btn_remove.TabIndex = 81;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.UseVisualStyleBackColor = false;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(762, 517);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(208, 51);
+            this.button12.TabIndex = 80;
+            this.button12.Text = "Submit";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(498, 550);
+            this.label17.Location = new System.Drawing.Point(498, 570);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 18);
-            this.label17.TabIndex = 76;
+            this.label17.TabIndex = 79;
             this.label17.Text = "Hours";
+            // 
+            // lblest
+            // 
+            this.lblest.AutoSize = true;
+            this.lblest.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblest.Location = new System.Drawing.Point(463, 570);
+            this.lblest.Name = "lblest";
+            this.lblest.Size = new System.Drawing.Size(16, 18);
+            this.lblest.TabIndex = 78;
+            this.lblest.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(334, 570);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 18);
+            this.label15.TabIndex = 77;
+            this.label15.Text = "Total Estimation :";
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(497, 550);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(16, 18);
+            this.lbltotal.TabIndex = 76;
+            this.lbltotal.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(462, 550);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 18);
+            this.label14.TabIndex = 75;
+            this.label14.Text = "Rp.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(333, 550);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(123, 18);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "Total Must Pay    :";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(337, 259);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(36, 17);
+            this.lblid.TabIndex = 73;
+            this.lblid.Text = "[ id ]";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(708, 255);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 18);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Search :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(777, 258);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 23);
+            this.textBox1.TabIndex = 71;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(337, 288);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(633, 213);
+            this.dataGridView1.TabIndex = 70;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Package ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Package\'s Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Package\'s Price (Rp.)";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total Unit";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Estimation in Hours";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Sub Total";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // PackageTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.lblest);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblid);
-            this.Controls.Add(this.button12);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.lbltime);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label17);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PackageTransaction";
@@ -725,7 +833,6 @@ namespace LKS_Laundry_Prov
             this.groupBox2.PerformLayout();
             this.panel_employee.ResumeLayout(false);
             this.panel_employee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_customer.ResumeLayout(false);
@@ -740,6 +847,7 @@ namespace LKS_Laundry_Prov
             this.panel_service.PerformLayout();
             this.panel_package.ResumeLayout(false);
             this.panel_package.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,18 +872,8 @@ namespace LKS_Laundry_Prov
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblest;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Panel panel_employee;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label lbltime;
         private System.Windows.Forms.Panel panel1;
@@ -797,6 +895,23 @@ namespace LKS_Laundry_Prov
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel_package;
+        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblest;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

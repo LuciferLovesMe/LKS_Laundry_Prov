@@ -29,6 +29,7 @@ namespace LKS_Laundry_Prov
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewTransaction));
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -95,11 +96,24 @@ namespace LKS_Laundry_Prov
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(338, 97);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(633, 190);
             this.dataGridView1.TabIndex = 71;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button9
             // 
@@ -159,6 +173,7 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_customer.Controls.Add(this.label7);
             this.panel_customer.Controls.Add(this.button7);
+            this.panel_customer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_customer.Location = new System.Drawing.Point(2, 452);
             this.panel_customer.Name = "panel_customer";
             this.panel_customer.Size = new System.Drawing.Size(307, 65);
@@ -183,6 +198,8 @@ namespace LKS_Laundry_Prov
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(-11, 3);
@@ -198,7 +215,10 @@ namespace LKS_Laundry_Prov
             this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(14, 534);
@@ -214,6 +234,7 @@ namespace LKS_Laundry_Prov
             this.panel_package_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
             this.panel_package_transaction.Controls.Add(this.label5);
             this.panel_package_transaction.Controls.Add(this.button5);
+            this.panel_package_transaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_package_transaction.Location = new System.Drawing.Point(2, 324);
             this.panel_package_transaction.Name = "panel_package_transaction";
             this.panel_package_transaction.Size = new System.Drawing.Size(307, 65);
@@ -238,6 +259,8 @@ namespace LKS_Laundry_Prov
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(-11, 3);
@@ -253,6 +276,7 @@ namespace LKS_Laundry_Prov
             this.panel_service_transaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
             this.panel_service_transaction.Controls.Add(this.label4);
             this.panel_service_transaction.Controls.Add(this.button4);
+            this.panel_service_transaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_service_transaction.Location = new System.Drawing.Point(2, 259);
             this.panel_service_transaction.Name = "panel_service_transaction";
             this.panel_service_transaction.Size = new System.Drawing.Size(307, 65);
@@ -277,6 +301,8 @@ namespace LKS_Laundry_Prov
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(-11, 3);
@@ -292,6 +318,7 @@ namespace LKS_Laundry_Prov
             this.panel_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(65)))), ((int)(((byte)(120)))));
             this.panel_report.Controls.Add(this.label6);
             this.panel_report.Controls.Add(this.button6);
+            this.panel_report.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_report.Location = new System.Drawing.Point(2, 388);
             this.panel_report.Name = "panel_report";
             this.panel_report.Size = new System.Drawing.Size(307, 65);
@@ -314,6 +341,8 @@ namespace LKS_Laundry_Prov
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-11, 3);
@@ -328,6 +357,7 @@ namespace LKS_Laundry_Prov
             this.panel_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(36)))), ((int)(((byte)(100)))));
             this.panel_service.Controls.Add(this.label2);
             this.panel_service.Controls.Add(this.button2);
+            this.panel_service.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_service.Location = new System.Drawing.Point(2, 129);
             this.panel_service.Name = "panel_service";
             this.panel_service.Size = new System.Drawing.Size(307, 65);
@@ -352,6 +382,8 @@ namespace LKS_Laundry_Prov
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(-11, 3);
@@ -366,6 +398,7 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_package.Controls.Add(this.label3);
             this.panel_package.Controls.Add(this.button3);
+            this.panel_package.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_package.Location = new System.Drawing.Point(2, 194);
             this.panel_package.Name = "panel_package";
             this.panel_package.Size = new System.Drawing.Size(307, 65);
@@ -390,6 +423,8 @@ namespace LKS_Laundry_Prov
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(-11, 3);
@@ -404,6 +439,7 @@ namespace LKS_Laundry_Prov
             // 
             this.panel_employee.Controls.Add(this.label1);
             this.panel_employee.Controls.Add(this.button1);
+            this.panel_employee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_employee.Location = new System.Drawing.Point(2, 65);
             this.panel_employee.Name = "panel_employee";
             this.panel_employee.Size = new System.Drawing.Size(307, 65);
@@ -428,6 +464,8 @@ namespace LKS_Laundry_Prov
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(-11, 3);
@@ -440,11 +478,15 @@ namespace LKS_Laundry_Prov
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(338, 339);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(633, 190);
             this.dataGridView2.TabIndex = 74;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // button10
             // 
@@ -459,6 +501,7 @@ namespace LKS_Laundry_Prov
             this.button10.TabIndex = 75;
             this.button10.Text = "Complete";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label9
             // 

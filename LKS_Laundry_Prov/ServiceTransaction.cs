@@ -25,6 +25,7 @@ namespace LKS_Laundry_Prov
 
             lbltime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             lblname.Text = Model.name;
+            lblid.Text = "ID Transaction : " + getId().ToString();
         }
 
         void loadservice()
@@ -71,6 +72,61 @@ namespace LKS_Laundry_Prov
             }
 
             return true;
+        }
+
+        int getId()
+        {
+            command = new SqlCommand("select id_header_Transaction from header_transaction order by id_header_transaction desc", connection);
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            int i = reader.GetInt32(0) + 1;
+            connection.Close();
+            return i;
+        }
+
+        int getTotal()
+        {
+            int t = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                t += Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+            }
+
+            return t;
+        }
+
+        int getHours()
+        {
+            int t = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                t += Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
+            }
+
+            return t;
+        }
+
+        int getTotalUnit()
+        {
+            int t = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                t += Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
+            }
+
+            return t;
+        }
+
+        void clear()
+        {
+            idCust = 0;
+            dataGridView1.Rows.Clear();
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            numericUpDown1.Value = 0;
+
         }
 
         private void panel_employee_Click(object sender, EventArgs e)
@@ -163,7 +219,79 @@ namespace LKS_Laundry_Prov
                 dataGridView1.Rows[row].Cells[3].Value = numericUpDown1.Value;
                 dataGridView1.Rows[row].Cells[4].Value = getEst();
                 dataGridView1.Rows[row].Cells[5].Value = numericUpDown1.Value * getPrice();
+
+                lbltotal.Text = getTotal().ToString();
+                lblest.Text = getHours().ToString();
             }
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Selected)
+            {
+                dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+
+                lbltotal.Text = getTotal().ToString();
+                lblest.Text = getHours().ToString();
+            }
+            else
+                MessageBox.Show("Please select an item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.RowCount > 0 && idCust > 0)
+            {
+                command = new SqlCommand("insert into header_transaction values(" + Model.id + ", " + idCust + ", getdate(), null)", connection);
+                try
+                {
+                    connection.Open();
+                    Command.exec(command);
+                    connection.Close();
+
+                    command = new SqlCommand("select top(1) id_header_Transaction from header_transaction order by id_header_Transaction desc", connection);
+                    connection.Open();
+                    reader = command.ExecuteReader();
+                    reader.Read();
+                    idTrans = reader.GetInt32(0);
+                    connection.Close();
+
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        command = new SqlCommand("insert into detail_transaction values(" + dataGridView1.Rows[i].Cells[0].Value + ", " + idTrans + ", null, " + dataGridView1.Rows[i].Cells[5].Value + ", " + dataGridView1.Rows[i].Cells[3].Value + ", null)", connection);
+                        try
+                        {
+                            connection.Open();
+                            Command.exec(command);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+
+                    MessageBox.Show("Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.CurrentRow.Selected = true;
+
         }
 
         private void button9_Click(object sender, EventArgs e)

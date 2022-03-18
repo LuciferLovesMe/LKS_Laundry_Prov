@@ -81,12 +81,13 @@ namespace LKS_Laundry_Prov
             this.lblest = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_remove = new System.Windows.Forms.Button();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel_customer.SuspendLayout();
@@ -105,7 +106,7 @@ namespace LKS_Laundry_Prov
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(708, 260);
+            this.label8.Location = new System.Drawing.Point(708, 251);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 18);
             this.label8.TabIndex = 47;
@@ -114,7 +115,7 @@ namespace LKS_Laundry_Prov
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(777, 263);
+            this.textBox1.Location = new System.Drawing.Point(777, 254);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 23);
             this.textBox1.TabIndex = 46;
@@ -131,11 +132,12 @@ namespace LKS_Laundry_Prov
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(337, 293);
+            this.dataGridView1.Location = new System.Drawing.Point(337, 284);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(633, 213);
             this.dataGridView1.TabIndex = 45;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button9
             // 
@@ -657,7 +659,7 @@ namespace LKS_Laundry_Prov
             // 
             this.lblid.AutoSize = true;
             this.lblid.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(337, 264);
+            this.lblid.Location = new System.Drawing.Point(337, 255);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(36, 17);
             this.lblid.TabIndex = 54;
@@ -667,7 +669,7 @@ namespace LKS_Laundry_Prov
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(334, 521);
+            this.label13.Location = new System.Drawing.Point(333, 546);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 18);
             this.label13.TabIndex = 55;
@@ -677,7 +679,7 @@ namespace LKS_Laundry_Prov
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(463, 521);
+            this.label14.Location = new System.Drawing.Point(462, 546);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 18);
             this.label14.TabIndex = 56;
@@ -687,7 +689,7 @@ namespace LKS_Laundry_Prov
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(498, 521);
+            this.lbltotal.Location = new System.Drawing.Point(497, 546);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(16, 18);
             this.lbltotal.TabIndex = 57;
@@ -697,7 +699,7 @@ namespace LKS_Laundry_Prov
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(334, 550);
+            this.label15.Location = new System.Drawing.Point(334, 566);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(122, 18);
             this.label15.TabIndex = 58;
@@ -707,7 +709,7 @@ namespace LKS_Laundry_Prov
             // 
             this.lblest.AutoSize = true;
             this.lblest.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblest.Location = new System.Drawing.Point(463, 550);
+            this.lblest.Location = new System.Drawing.Point(463, 566);
             this.lblest.Name = "lblest";
             this.lblest.Size = new System.Drawing.Size(16, 18);
             this.lblest.TabIndex = 59;
@@ -717,7 +719,7 @@ namespace LKS_Laundry_Prov
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(498, 550);
+            this.label17.Location = new System.Drawing.Point(498, 566);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 18);
             this.label17.TabIndex = 60;
@@ -729,42 +731,28 @@ namespace LKS_Laundry_Prov
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(798, 523);
+            this.button12.Location = new System.Drawing.Point(762, 513);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(171, 41);
+            this.button12.Size = new System.Drawing.Size(208, 51);
             this.button12.TabIndex = 61;
             this.button12.Text = "Submit";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // Column1
+            // btn_remove
             // 
-            this.Column1.HeaderText = "Service ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Service\'s Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Service\'s Price (Rp.)";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Unit";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estimation in Hours";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.btn_remove.BackColor = System.Drawing.Color.Crimson;
+            this.btn_remove.FlatAppearance.BorderSize = 0;
+            this.btn_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_remove.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove.ForeColor = System.Drawing.Color.White;
+            this.btn_remove.Location = new System.Drawing.Point(337, 503);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(176, 33);
+            this.btn_remove.TabIndex = 62;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.UseVisualStyleBackColor = false;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // Column6
             // 
@@ -772,11 +760,42 @@ namespace LKS_Laundry_Prov
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Estimation in Hours";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total Unit";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Service\'s Price (Rp.)";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Service\'s Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Service ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // ServiceTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.lblest);
@@ -878,6 +897,7 @@ namespace LKS_Laundry_Prov
         private System.Windows.Forms.Label lblest;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btn_remove;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
