@@ -45,20 +45,44 @@ namespace LKS_Laundry_Prov
 
         void loadgrid2()
         {
-            command = new SqlCommand("select detail_transaction.*, package.name_package, service.name_Service from detail_transaction join package on package.id_package = detail_transaction.id_package join service on service.id_Service = detail_transaction.id_Service where id_header_transaction = " + idTrans, connection);
-            dataGridView2.DataSource = Command.getdata(command);
-            dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[1].Visible = false;
-            dataGridView2.Columns[2].Visible = false;
-            dataGridView2.Columns[3].Visible = false;
+            command = new SqlCommand("select top(1) * from detail_transaction where id_header_transaction = " + idTrans + " order by id_detail_transaction desc", connection);
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            if (reader["id_service"] == DBNull.Value)
+            {
+                connection.Close();
+                command = new SqlCommand("select detail_transaction.*, package.name_package from detail_transaction join package on package.id_package = detail_transaction.id_package where id_header_transaction = " + idTrans, connection);
+                dataGridView2.DataSource = Command.getdata(command);
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[1].Visible = false;
+                dataGridView2.Columns[2].Visible = false;
+                dataGridView2.Columns[3].Visible = false;
 
-            dataGridView2.Columns[4].DefaultCellStyle.Format = "dddd, dd-MM-yyyy HH:mm:ss";
+                //dataGridView2.Columns[4].DefaultCellStyle.Format = "dddd, dd-MM-yyyy HH:mm:ss";
 
-            dataGridView2.Columns[4].HeaderText = "Total Price";
-            dataGridView2.Columns[5].HeaderText = "Total Units";
-            dataGridView2.Columns[6].HeaderText = "Complete Date";
-            dataGridView2.Columns[7].HeaderText = "Package Name";
-            dataGridView2.Columns[8].HeaderText = "Service Name";
+                dataGridView2.Columns[4].HeaderText = "Total Price";
+                dataGridView2.Columns[5].HeaderText = "Total Units";
+                dataGridView2.Columns[6].HeaderText = "Complete Date";
+                dataGridView2.Columns[7].HeaderText = "Package Name";
+            }
+            else
+            {
+                connection.Close();
+                command = new SqlCommand("select detail_transaction.*, service.name_Service from detail_transaction join service on service.id_Service = detail_transaction.id_Service where id_header_transaction = " + idTrans, connection);
+                dataGridView2.DataSource = Command.getdata(command);
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[1].Visible = false;
+                dataGridView2.Columns[2].Visible = false;
+                dataGridView2.Columns[3].Visible = false;
+
+                //dataGridView2.Columns[4].DefaultCellStyle.Format = "dddd, dd-MM-yyyy HH:mm:ss";
+
+                dataGridView2.Columns[4].HeaderText = "Total Price";
+                dataGridView2.Columns[5].HeaderText = "Total Units";
+                dataGridView2.Columns[6].HeaderText = "Complete Date";
+                dataGridView2.Columns[7].HeaderText = "Service Name";
+            }
         }
 
         private void panel_employee_Click(object sender, EventArgs e)
@@ -138,7 +162,8 @@ namespace LKS_Laundry_Prov
                 command.ExecuteNonQuery();
                 connection.Close();
 
-                command = new SqlCommand("select * from detail_transaction where id_header_Transaction = " + idTrans + " and complete_datetime_Detail_transaction is not null", connection);
+                command = new SqlCommand("select * from detail_transaction where id_header_Transaction = " + idTrans + " and complete_datetime_Detail_transaction is null", connection);
+                connection.Open();
                 reader = command.ExecuteReader();
                 reader.Read();
                 if (!reader.HasRows)
